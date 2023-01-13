@@ -1,0 +1,24 @@
+<div id="whiteboard-container">
+  <div id="whiteboard">
+    <canvas id="canvas"></canvas>
+  </div>
+</div>
+
+<div id="controls">
+  <div class="tool-container">
+    <button id="pencil" class="tool selected">Pencil</button>
+    <button id="eraser" class="tool">Eraser</button>
+  </div>
+  <div class="options-container">
+    <label for="brush-size">Brush size:</label>
+    <input type="range" id="brush-size" min="1" max="50" value="5">
+    <br>
+    <label for="brush-color">Brush color:</label>
+    <input type="color" id="brush-color" value="#000000">
+  </div>
+  <div class="actions-container">
+    <button id="clear">Clear</button>
+    <button id="undo">Undo</button>
+    <button id="save">Save</button>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#whiteboard-container {
+  width: 80%;
+  margin: 30px auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #ccc;
+  position: relative;
+}
+
+#whiteboard {
+  width: 100%;
+  height: 500px;
+  background-color: white;
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+}
+
+#controls {
+  width: 100%;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+#controls .tool-container, #controls .options-container, #controls .actions-container {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+}
+
+#controls .tool-container {
+  width: 30%;
+  display: flex;
+}
+
+#controls .options-container {
+  width: 40%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+#controls .options-container label{
+    margin-right: 10px;
+}
+#controls .options-container input[type=range] {
+    width: 60%;
+}
+
+#controls .actions-container {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#controls button, #controls input[type=range], #controls input[type=color] {
+  padding: 10px 20px;
+  margin: 0 10px 10px 0;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+#controls button:hover {
+  background-color: #ddd;
+}
+
+#controls .tool {
+  background-color: #f2f2f2;
+}
+
+#controls .selected {
+  background-color: #ddd;
+}
