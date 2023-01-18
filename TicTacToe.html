@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic Tac Toe</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td id="cell-1"></td>
+        <td id="cell-2"></td>
+        <td id="cell-3"></td>
+      </tr>
+      <tr>
+        <td id="cell-4"></td>
+        <td id="cell-5"></td>
+        <td id="cell-6"></td>
+      </tr>
+      <tr>
+        <td id="cell-7"></td>
+        <td id="cell-8"></td>
+        <td id="cell-9"></td>
+      </tr>
+    </table>
+    <div id="result"></div>
+    <script>
+      let cells = document.querySelectorAll("td");
+let currentPlayer = "X";
+let gameOver = false;
+
+for (let i = 0; i < cells.length; i++) {
+  cells[i].addEventListener("click", function() {
+    if (!gameOver) {
+      if (this.textContent === "") {
+        this.textContent = currentPlayer;
+        checkForWinner();
+        switchPlayer();
+      }
+    }
+  });
+}
+
+function checkForWinner() {
+  let winningCombinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+  ];
+  for (let i = 0; i < winningCombinations.length; i++) {
+    let combination = winningCombinations[i];
+    if (
+      cells[combination[0]].textContent === currentPlayer &&
+      cells[combination[1]].textContent === currentPlayer &&
+      cells[combination[2]].textContent === currentPlayer
+    ) {
+      gameOver = true;
+      let result = document.querySelector("#result");
+      result.textContent = "Player " + currentPlayer + " wins!";
+      break;
+    }
+  }
+}
+
+function switchPlayer() {
+  if (currentPlayer === "X") {
+    currentPlayer = "O";
+  } else {
+    currentPlayer = "X";
+  }
+}
+\
+    </script>
+  </body>
+</html>
