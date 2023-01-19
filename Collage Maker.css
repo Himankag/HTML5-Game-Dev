@@ -1,0 +1,77 @@
+/* Define your color scheme */
+:root {
+    --primary-color: #ff8c00;
+    --secondary-color: #ffa600;
+    --text-color: #333;
+}
+
+/* Style the headings */
+h1, h2, h3 {
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px #ddd;
+    text-transform: uppercase;
+}
+
+/* Style the buttons */
+button, .option {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    /* Add hover effect */
+    transition: all 0.3s ease-in-out;
+    /* Add some box shadow */
+    box-shadow: 0px 2px 4px #ddd;
+}
+
+/* Add hover effect to the buttons and options */
+button:hover, .option:hover {
+    transform: scale(1.1);
+    background-color: var(--secondary-color);
+}
+
+/* Style the rest of the website */
+.collage-container img {
+    border: 5px solid var(--primary-color);
+    margin: 5px;
+    object-fit: cover;
+    /* Add hover effect */
+    transition: all 0.3s ease-in-out;
+    transform-origin: center;
+    animation: fade-out 1s ease-in-out;
+}
+
+/* Add some hover effect to the images */
+.collage-container img:hover {
+    box-shadow: 0 0 10px var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* Add some border radius to the images */
+.collage-container.mosaic img, .collage-container.carousel img {
+    border-radius: 10px;
+}
+
+/* Add some background color to the collage container */
+.collage-container {
+    background-color: #f9f9f9;
+    /* Add gradient background */
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    /* Add some padding */
+    padding: 20px;
+    /* Add some border radius to the container */
+    border-radius: 10px;
+    /* Add shadow effect to the container */
+    box-shadow: 0 0 10px var(--primary-color);
+    /* Add some font style to the container */
+    font-family: 'Open Sans', sans-serif;
+    /* Add some more styles to the container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* other styles here */
+}
+
