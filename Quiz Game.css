@@ -1,0 +1,37 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(to right, #ff7f50, #ff6347);
+  color: white;
+  text-align: center;
+}
+
+#quiz {
+  width: 50%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.question {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+#submit {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: #e25822;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 22px;
+}
