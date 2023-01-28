@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <title>News</title>
+  </head>
+  <body>
+    <header>
+      <h1>News</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="searchNews('top-stories')">Top Stories</a></li>
+        <li><a href="#" onclick="searchNews('local-news')">Local News</a></li>
+        <li><a href="#" onclick="searchNews('world-news')">World News</a></li>
+        <li><a href="#" onclick="searchNews('sports')">Sports</a></li>
+        <li><a href="#" onclick="searchNews('entertainment')">Entertainment</a></li>
+      </ul>
+    </nav>
+    <section id="news-section"></section>
+    <script>
+      function searchNews(category) {
+        // window.location.href = `https://www.google.com/search?q=${category}+news`;
+        fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=API_KEY`)
+          .then(response => response.json())
+          .then(data => {
+            let output = "";
+            data.articles.forEach(article => {
+              output += `
+                <div class="article">
+                  <img src="${article.urlToImage}" alt="${article.title}" />
+                  <h2>${article.title}</h2>
+                  <p>${article.description}</p>
+                  <a href="${article.url}" target="_blank">Read more</a>
+                </div>
+              `;
+            });
+            document.getElementById("news-section").innerHTML = output;
+          });
+      }
+    </script>
+  </body>
+</html>
